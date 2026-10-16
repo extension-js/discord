@@ -1,0 +1,48 @@
+name: Feed
+
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Read the feeds and log what would be posted without posting
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: feed
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+
+      - name: Read the feeds and post the new items
+        env:
+          DISCORD_FEED_WEBHOOK_URL: ${{ secrets.DISCORD_FEED_WEBHOOK_URL }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: node src/run.mjs
+
+      - name: Record the seen items
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          if git diff --quiet -- state/seen.json; then
+            echo "state unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/seen.json
+          git commit -m "Record the feed items seen on $(date -u +%Y-%m-%d)"
+          git push

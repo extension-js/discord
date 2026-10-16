@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <id>tag:github.com,2008:/w3c/webextensions/commits/main</id>
+  <link type="text/html" rel="alternate" href="https://github.com/w3c/webextensions/commits/main"/>
+  <title>Recent Commits to webextensions:main</title>
+  <updated>2026-10-15T18:02:11Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/abc123</id>
+    <link type="text/html" rel="alternate" href="https://github.com/w3c/webextensions/commit/abc123"/>
+    <title>Add meeting notes for 2026-10-15</title>
+    <updated>2026-10-15T18:02:11Z</updated>
+    <author><name>someone</name></author>
+    <content type="html">&lt;pre style='white-space:pre-wrap;width:81ch'&gt;Add meeting notes for 2026-10-15&lt;/pre&gt;</content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/def456</id>
+    <link href="https://github.com/w3c/webextensions/commit/def456"/>
+    <title type="html">Proposal: &lt;code&gt;runtime.onEnabled&lt;/code&gt; event</title>
+    <published>2026-10-14T09:00:00Z</published>
+    <summary>A new lifecycle event</summary>
+  </entry>
+</feed>

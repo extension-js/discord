@@ -1,0 +1,16 @@
+{
+  "name": "discord-feed",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Posts new browser extension news from a list of RSS and Atom feeds to a Discord channel",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/run.mjs",
+    "dry": "DRY_RUN=true node src/run.mjs",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

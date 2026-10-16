@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mozilla Add-ons Community Blog</title>
+    <atom:link href="https://blog.mozilla.org/addons/feed/" rel="self" type="application/rss+xml" />
+    <link>https://blog.mozilla.org/addons</link>
+    <item>
+      <title>Manifest V3 &amp; the road ahead</title>
+      <link>https://blog.mozilla.org/addons/2026/10/01/mv3-road-ahead/</link>
+      <pubDate>Thu, 01 Oct 2026 16:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://blog.mozilla.org/addons/?p=1001</guid>
+      <description><![CDATA[<p>Firefox 150 ships <strong>extension</strong> changes &amp; more.</p>]]></description>
+      <content:encoded><![CDATA[<p>Long body</p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Welcome to the new blog]]></title>
+      <link>https://blog.mozilla.org/addons/2026/09/20/new-blog/</link>
+      <pubDate>Sun, 20 Sep 2026 10:00:00 +0000</pubDate>
+      <description>A fresh &lt;em&gt;start&lt;/em&gt; for the add-ons community</description>
+    </item>
+    <item>
+      <title>No link here</title>
+      <description>Skipped because it has no link</description>
+    </item>
+  </channel>
+</rss>

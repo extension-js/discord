@@ -1,0 +1,52 @@
+[
+  {
+    "id": "chrome-blog",
+    "name": "Chrome for Developers",
+    "site": "https://developer.chrome.com/blog",
+    "url": "https://developer.chrome.com/blog/feed.xml",
+    "keywords": ["\\bextensions?\\b", "manifest v3", "chrome web store", "side panel", "webextensions"],
+    "in": "title",
+    "max": 5
+  },
+  {
+    "id": "mozilla-addons",
+    "name": "Mozilla Add-ons Community Blog",
+    "site": "https://blog.mozilla.org/addons/",
+    "url": "https://blog.mozilla.org/addons/feed/",
+    "keywords": null,
+    "max": 5
+  },
+  {
+    "id": "edge-blog",
+    "name": "Microsoft Edge Blog",
+    "site": "https://blogs.windows.com/msedgedev/",
+    "url": "https://blogs.windows.com/msedgedev/feed/",
+    "keywords": ["\\bextensions?\\b", "\\badd-ons?\\b"],
+    "max": 5
+  },
+  {
+    "id": "webkit-blog",
+    "name": "WebKit Blog",
+    "site": "https://webkit.org/blog/",
+    "url": "https://webkit.org/feed/",
+    "keywords": ["\\bextensions?\\b"],
+    "max": 5
+  },
+  {
+    "id": "w3c-webextensions",
+    "name": "W3C WebExtensions Community Group",
+    "site": "https://github.com/w3c/webextensions",
+    "url": "https://github.com/w3c/webextensions/commits/main.atom",
+    "keywords": null,
+    "exclude": ["^Merge (pull request|branch)"],
+    "max": 3
+  },
+  {
+    "id": "chrome-releases",
+    "name": "Chrome Releases",
+    "site": "https://chromereleases.googleblog.com/",
+    "url": "https://chromereleases.googleblog.com/feeds/posts/default?alt=rss",
+    "keywords": ["stable channel update for desktop"],
+    "max": 2
+  }
+]
