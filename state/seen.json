@@ -1,1 +1,106 @@
-{}
+{
+  "chrome-blog": {
+    "seen": [
+      "https://developer.chrome.com/blog/new-in-webgpu-155-156?hl=en",
+      "https://developer.chrome.com/blog/jpeg-xl-in-chrome?hl=en",
+      "https://developer.chrome.com/blog/email-verification-october-2026?hl=en",
+      "https://developer.chrome.com/blog/chrome-156-beta?hl=en",
+      "https://developer.chrome.com/blog/html-in-canvas-ot-changes?hl=en",
+      "https://developer.chrome.com/blog/connection-allowlist-announcement?hl=en",
+      "https://developer.chrome.com/blog/new-in-chrome-154?hl=en",
+      "https://developer.chrome.com/blog/new-in-devtools-october-2026?hl=en",
+      "https://developer.chrome.com/blog/split-view-api-extensions?hl=en",
+      "https://developer.chrome.com/blog/chrome-155-beta?hl=en"
+    ]
+  },
+  "mozilla-addons": {
+    "seen": [
+      "https://blog.mozilla.org/addons/?p=9302",
+      "https://blog.mozilla.org/addons/?p=9299",
+      "https://blog.mozilla.org/addons/?p=9294",
+      "https://blog.mozilla.org/addons/?p=9291",
+      "https://blog.mozilla.org/addons/?p=9305"
+    ]
+  },
+  "edge-blog": {
+    "seen": [
+      "https://blogs.windows.com/msedgedev/?p=26276",
+      "https://blogs.windows.com/msedgedev/?p=26265",
+      "https://blogs.windows.com/msedgedev/?p=26261",
+      "https://blogs.windows.com/msedgedev/?p=26259",
+      "https://blogs.windows.com/msedgedev/?p=26254",
+      "https://blogs.windows.com/msedgedev/?p=26248",
+      "https://blogs.windows.com/msedgedev/?p=26242",
+      "https://blogs.windows.com/msedgedev/?p=26226",
+      "https://blogs.windows.com/msedgedev/?p=26212",
+      "https://blogs.windows.com/msedgedev/?p=26205"
+    ]
+  },
+  "webkit-blog": {
+    "seen": [
+      "https://webkit.org/?p=18420",
+      "https://webkit.org/?p=18357",
+      "https://webkit.org/?p=18325",
+      "https://webkit.org/?p=18304",
+      "https://webkit.org/?p=18283",
+      "https://webkit.org/?p=18227",
+      "https://webkit.org/?p=18194",
+      "https://webkit.org/?p=18191",
+      "https://webkit.org/?p=18182",
+      "https://webkit.org/?p=18178"
+    ]
+  },
+  "w3c-webextensions": {
+    "seen": [
+      "tag:github.com,2008:Grit::Commit/c1623cd9d1bd941d2797a80312a919eb7581d131",
+      "tag:github.com,2008:Grit::Commit/f3b70223da16574ec286c1f3223c6fb65d838352",
+      "tag:github.com,2008:Grit::Commit/f30382f287a5001e47e49dcce4f8249a874c8c75",
+      "tag:github.com,2008:Grit::Commit/96f287b2825edfbdd108a5c8379991936c5a0aa9",
+      "tag:github.com,2008:Grit::Commit/e3b2c2422dcdda95db5ba7c51cb16caff5c38472",
+      "tag:github.com,2008:Grit::Commit/dce23e63a26ef57433a460810ee693dbe0850e34",
+      "tag:github.com,2008:Grit::Commit/9f98767d603dce67be98598e5bd803d88611938b",
+      "tag:github.com,2008:Grit::Commit/0e2d0808645f5827c8d6349a50f396879f68997e",
+      "tag:github.com,2008:Grit::Commit/c8617a857876d8bc3d79ad05a0b79cb30878faad",
+      "tag:github.com,2008:Grit::Commit/d7c8caf6988d5d0f6e22e915882852bcc206c130",
+      "tag:github.com,2008:Grit::Commit/3d4d930da84729920d791d2b32d60028f474f9d9",
+      "tag:github.com,2008:Grit::Commit/fa18d8e251c9a0210def2c00f71e34e77d23715e",
+      "tag:github.com,2008:Grit::Commit/2f9b7ab2ff051ee17713d0483f96f35453f484c1",
+      "tag:github.com,2008:Grit::Commit/add145b1b50bccefd4da277f3cd8a15a9261737e",
+      "tag:github.com,2008:Grit::Commit/d9046350b1b1a75e339ab16c936ad299be61f981",
+      "tag:github.com,2008:Grit::Commit/d31645915d0efc30b35745748d66126e021cd5e7",
+      "tag:github.com,2008:Grit::Commit/4617818422d942d7c9e674f2c961d4c58ec31534",
+      "tag:github.com,2008:Grit::Commit/643a06fccf052fa471010b580fca3dbc16b36c59",
+      "tag:github.com,2008:Grit::Commit/defdb3fa82c8ac4e6b1a1997da2607b11202e769",
+      "tag:github.com,2008:Grit::Commit/84bdc11f89ff125b6d8b63c30078b5d6e8cffd75"
+    ]
+  },
+  "chrome-releases": {
+    "seen": [
+      "tag:blogger.com,1999:blog-8982037438137564684.post-8489300598623801635",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-8304004512137754625",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-3475293035331928368",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-8151465228119499699",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-8498469488935693013",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-1292377686513117162",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-4983723843356353580",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-4597197654659049763",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-1198183986859176904",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-3239933970737097235",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-6544422475896585610",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-8339176651143939642",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-7272761616743451577",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-6174354049761302075",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-3786866824893729514",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-6175335722298851906",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-52083795167364607",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-5228238595871446754",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-6268046375552780982",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-4377973940654380912",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-5652069569100777247",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-7340628801585433400",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-6494147150963767611",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-5231256157199874703",
+      "tag:blogger.com,1999:blog-8982037438137564684.post-1538369233347328290"
+    ]
+  }
+}
