@@ -54,6 +54,7 @@ test('askAssistant sends the conversation as text parts with a bearer key', asyn
   assert.equal(seen.init.headers.authorization, 'Bearer k')
   const body = JSON.parse(seen.init.body)
   assert.deepEqual(body.messages.map((m) => [m.id, m.role, m.parts[0].text]), [['m1', 'user', 'hi'], ['m2', 'assistant', 'yo']])
+  assert.deepEqual(body.filter, {language: 'en'}, 'the search stays on the English pages')
   assert.equal(result.text, 'Hello world')
 })
 

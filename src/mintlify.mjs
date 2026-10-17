@@ -1,6 +1,8 @@
 // Asks the Mintlify assistant behind extension.js.org a question and turns
 // its streamed answer into a Discord message. The assistant answers from the
-// docs and links the pages it used, so every reply carries its sources.
+// docs and links the pages it used, so every reply carries its sources. The
+// search is pinned to the English pages, or the translations crowd out the
+// handful of results the assistant reads.
 
 export const DEFAULT_DOMAIN = 'extensionjs'
 export const SITE = 'https://extension.js.org'
@@ -11,6 +13,7 @@ export async function askAssistant({
   messages,
   domain = DEFAULT_DOMAIN,
   fp = 'discord-help',
+  language = 'en',
   fetchImpl = fetch,
   timeoutMs = 120000
 }) {
@@ -23,6 +26,7 @@ export async function askAssistant({
       headers: {authorization: `Bearer ${apiKey}`, 'content-type': 'application/json'},
       body: JSON.stringify({
         fp,
+        filter: {language},
         messages: messages.map((message, index) => ({
           id: `m${index + 1}`,
           role: message.role,
