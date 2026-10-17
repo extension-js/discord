@@ -96,12 +96,22 @@ test('a new message that does not mention the bot only moves the cursor', async 
   assert.equal(result.state.threads[id].lastMessageId, '2000')
 })
 
-test('the reply carries the related pages and the footer, and stays under the Discord limit', () => {
-  const text = 'Use `firefox:` as a prefix.\n\nSee [Browser-specific fields](/docs/features/browser-specific-fields).\n\n```suggestions\n(Browser-specific manifest fields)[/docs/features/browser-specific-fields]\n```'
+test('the reply lists only the related pages the answer did not link, ends with the footer, and stays under the Discord limit', () => {
+  const text = 'Use `firefox:` as a prefix.\n\nSee [Browser-specific fields](/docs/features/browser-specific-fields).\n\n```suggestions\n(Browser-specific manifest fields)[/docs/features/browser-specific-fields]\n(Content scripts)[/docs/implementation-guide/content-scripts]\n```'
   const chunks = buildReply({text, sources: []}, 'first')
   assert.equal(chunks.length, 1)
   assert.match(chunks[0], /\[Browser-specific fields\]\(https:\/\/extension\.js\.org\/docs\/features\/browser-specific-fields\)/)
-  assert.match(chunks[0], /Related: \[Browser-specific manifest fields\]\(<https:\/\/extension\.js\.org\/docs\/features\/browser-specific-fields>\)/)
-  assert.match(chunks[0], /-# Answered from the docs/)
+  assert.match(chunks[0], /Related: \[Content scripts\]\(<https:\/\/extension\.js\.org\/docs\/implementation-guide\/content-scripts>\)$/m)
+  assert.doesNotMatch(chunks[0], /Related: \[Browser-specific manifest fields\]/)
+  assert.match(chunks[0], /-# Answered from the docs[^\n]*$/)
   assert.doesNotMatch(chunks[0], /```suggestions/)
+})
+
+test('a long answer keeps the footer on its last message instead of a message of its own', () => {
+  const text = ('a paragraph of text that goes on for a while. '.repeat(8) + '\n\n').repeat(6)
+  const chunks = buildReply({text, sources: []}, 'first')
+  assert.ok(chunks.length >= 2)
+  assert.match(chunks[chunks.length - 1], /-# Answered from the docs/)
+  assert.ok(chunks[chunks.length - 1].length > 200, 'the footer is not alone')
+  for (const chunk of chunks) assert.ok(chunk.length <= 2000)
 })

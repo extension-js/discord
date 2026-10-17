@@ -130,12 +130,19 @@ function prune(state) {
   return state
 }
 
+// The footer rides on the last message, and the related list only names
+// pages the answer did not link already.
 export function buildReply(answer, kind) {
   const {body, related} = formatAnswer(answer.text)
   const parts = [body]
-  if (related.length > 0) parts.push('Related: ' + related.map((page) => `[${page.title}](<${page.url}>)`).join(' · '))
-  parts.push(kind === 'first' ? FIRST_FOOTER : FOLLOW_UP_FOOTER)
-  return splitMessage(parts.join('\n\n'))
+  const unseen = related.filter((page) => !body.includes(page.url))
+  if (unseen.length > 0) parts.push('Related: ' + unseen.map((page) => `[${page.title}](<${page.url}>)`).join(' · '))
+  const footer = kind === 'first' ? FIRST_FOOTER : FOLLOW_UP_FOOTER
+  const chunks = splitMessage(parts.join('\n\n'))
+  const last = chunks[chunks.length - 1]
+  if (last.length + footer.length + 2 <= 2000) chunks[chunks.length - 1] = `${last}\n\n${footer}`
+  else chunks.push(footer)
+  return chunks
 }
 
 export async function main({env = process.env, log = console.log} = {}) {
