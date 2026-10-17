@@ -3,6 +3,9 @@
 // call waits and tries again a couple of times before giving up.
 
 const API = 'https://discord.com/api/v10'
+// Links in an answer would each unfurl into a preview card, so every message
+// is sent with embeds suppressed.
+const SUPPRESS_EMBEDS = 1 << 2
 
 export function createClient({token, fetchImpl = fetch, sleep = defaultSleep}) {
   if (!token) throw new Error('DISCORD_BOT_TOKEN is missing')
@@ -52,6 +55,7 @@ export function createClient({token, fetchImpl = fetch, sleep = defaultSleep}) {
         method: 'POST',
         body: {
           content,
+          flags: SUPPRESS_EMBEDS,
           allowed_mentions: {parse: [], replied_user: true},
           ...(replyTo ? {message_reference: {message_id: replyTo, fail_if_not_exists: false}} : {})
         }

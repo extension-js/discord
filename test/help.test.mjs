@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {plan, buildReply, HELP_CHANNEL_ID} from '../src/help.mjs'
+import {createClient} from '../src/discord-api.mjs'
 
 const BOT = '999'
 const now = new Date('2026-10-17T12:00:00Z')
@@ -114,4 +115,19 @@ test('a long answer keeps the footer on its last message instead of a message of
   assert.match(chunks[chunks.length - 1], /-# Answered from the docs/)
   assert.ok(chunks[chunks.length - 1].length > 200, 'the footer is not alone')
   for (const chunk of chunks) assert.ok(chunk.length <= 2000)
+})
+
+test('messages are sent as a reply with embeds suppressed and no mention parsing', async () => {
+  let seen
+  const fetchImpl = async (url, init) => {
+    seen = {url, init}
+    return {ok: true, status: 200, json: async () => ({id: '1'})}
+  }
+  const client = createClient({token: 't', fetchImpl})
+  await client.send('c1', {content: 'hi', replyTo: 'm1'})
+  assert.equal(seen.url, 'https://discord.com/api/v10/channels/c1/messages')
+  const body = JSON.parse(seen.init.body)
+  assert.equal(body.flags, 4)
+  assert.deepEqual(body.allowed_mentions, {parse: [], replied_user: true})
+  assert.equal(body.message_reference.message_id, 'm1')
 })
