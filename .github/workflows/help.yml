@@ -9,6 +9,10 @@ on:
         description: Read the forum and log the answers without posting
         type: boolean
         default: false
+      ask:
+        description: Ask the docs assistant one question and print the answer instead of reading the forum
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -28,7 +32,15 @@ jobs:
         with:
           node-version: 22
 
+      - name: Ask the docs assistant one question
+        if: ${{ inputs.ask != '' }}
+        env:
+          MINTLIFY_ASSISTANT_KEY: ${{ secrets.MINTLIFY_ASSISTANT_KEY }}
+          ASK: ${{ inputs.ask }}
+        run: node src/ask.mjs "$ASK"
+
       - name: Answer the new help posts from the docs
+        if: ${{ inputs.ask == '' }}
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           MINTLIFY_ASSISTANT_KEY: ${{ secrets.MINTLIFY_ASSISTANT_KEY }}
@@ -36,7 +48,7 @@ jobs:
         run: node src/help.mjs
 
       - name: Record the answered posts
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ inputs.dry_run != true && inputs.ask == '' }}
         run: |
           if git diff --quiet -- state/help.json; then
             echo "state unchanged"
