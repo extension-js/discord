@@ -14,7 +14,7 @@ export const FEEDS_PATH = join(ROOT, 'feeds.json')
 export const STATE_PATH = join(ROOT, 'state', 'seen.json')
 const SEEN_LIMIT = 500
 const TOTAL_LIMIT = 12
-const USER_AGENT = 'Extension.js feed bot (+https://github.com/extension-js/discord-feed)'
+const USER_AGENT = 'Extension.js feed bot (+https://github.com/extension-js/discord)'
 
 export async function fetchText(url, {fetchImpl = fetch, timeoutMs = 20000} = {}) {
   const controller = new AbortController()

@@ -1,0 +1,50 @@
+name: Help
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Read the forum and log the answers without posting
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: help
+  cancel-in-progress: false
+
+jobs:
+  answer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+
+      - name: Answer the new help posts from the docs
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          MINTLIFY_ASSISTANT_KEY: ${{ secrets.MINTLIFY_ASSISTANT_KEY }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: node src/help.mjs
+
+      - name: Record the answered posts
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          if git diff --quiet -- state/help.json; then
+            echo "state unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/help.json
+          git commit -m "Record the help posts answered on $(date -u +%Y-%m-%d)"
+          git pull --rebase
+          git push

@@ -1,15 +1,17 @@
 {
-  "name": "discord-feed",
+  "name": "discord",
   "version": "1.0.0",
   "private": true,
-  "description": "Posts new browser extension news from a list of RSS and Atom feeds to a Discord channel",
+  "description": "The bots behind the Extension.js Discord: a news feed and a help bot that answers from the docs",
   "type": "module",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "start": "node src/run.mjs",
-    "dry": "DRY_RUN=true node src/run.mjs",
+    "feed": "node src/run.mjs",
+    "feed:dry": "DRY_RUN=true node src/run.mjs",
+    "help": "node src/help.mjs",
+    "help:dry": "DRY_RUN=true node src/help.mjs",
     "test": "node --test"
   },
   "license": "MIT"
