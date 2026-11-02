@@ -36,7 +36,8 @@
       "https://blogs.windows.com/msedgedev/?p=26226",
       "https://blogs.windows.com/msedgedev/?p=26212",
       "https://blogs.windows.com/msedgedev/?p=26205",
-      "https://blogs.windows.com/msedgedev/?p=26283"
+      "https://blogs.windows.com/msedgedev/?p=26283",
+      "https://blogs.windows.com/msedgedev/?p=26296"
     ]
   },
   "webkit-blog": {
@@ -91,7 +92,9 @@
       "tag:github.com,2008:Grit::Commit/8def346ce20c8709c95350a511cdfed089dd0704",
       "tag:github.com,2008:Grit::Commit/b5537dd00c2e0ffcc8edb4490626d530696b6d0b",
       "tag:github.com,2008:Grit::Commit/36ef4fdb6092757079fc52b08622fb0b93f87120",
-      "tag:github.com,2008:Grit::Commit/8e7210b0aaeff3db4973e8ed67e80178c69d5206"
+      "tag:github.com,2008:Grit::Commit/8e7210b0aaeff3db4973e8ed67e80178c69d5206",
+      "tag:github.com,2008:Grit::Commit/570789f01447084ae15194174e10fd984687f4f2",
+      "tag:github.com,2008:Grit::Commit/41fb86208d748f72685162c5f264c5b57b67b1a0"
     ]
   },
   "chrome-releases": {
