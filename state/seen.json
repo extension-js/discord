@@ -59,7 +59,8 @@
       "https://webkit.org/?p=18486",
       "https://webkit.org/?p=18515",
       "https://webkit.org/?p=18541",
-      "https://webkit.org/?p=18602"
+      "https://webkit.org/?p=18602",
+      "https://webkit.org/?p=18608"
     ]
   },
   "w3c-webextensions": {
@@ -102,7 +103,9 @@
       "tag:github.com,2008:Grit::Commit/0cf05888b7c85c0649dafba30798d37e99eaccc5",
       "tag:github.com,2008:Grit::Commit/58cb0cbd25b2f937a2c02296b750c87b1af0c6c0",
       "tag:github.com,2008:Grit::Commit/51222ac207e8b56ef7dd667b5321d4d67053a6bc",
-      "tag:github.com,2008:Grit::Commit/948f0b40a586719d88ceb5fe26caaf411307bf2a"
+      "tag:github.com,2008:Grit::Commit/948f0b40a586719d88ceb5fe26caaf411307bf2a",
+      "tag:github.com,2008:Grit::Commit/029b63b5f3158f7e58e853d10f9a906605a90e45",
+      "tag:github.com,2008:Grit::Commit/fd3903840aba043f1d78bc468e72471c1cb5039c"
     ]
   },
   "chrome-releases": {
